@@ -1,3 +1,5 @@
+# CODE MOVED TO GITLAB - CODE WON'T BE UPDATED HERE ANYMORE! https://gitlab.com/jaakkorepo/jColour
+
 # jColour
 
 Website + discord.js interface for the jColour bot
