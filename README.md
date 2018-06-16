@@ -4,7 +4,6 @@
 
 Website + discord.js interface for the jColour-reloaded bot
 
-[![Discord Bots](https://discordbots.org/api/widget/358968052500660226.svg)](https://discordbots.org/bot/358968052500660226)
 
 ## Invite me!
 
@@ -44,8 +43,10 @@ We have a few guidelines and would appreciate you following them.
 Please submit a pull request or an issue.
 
 ## Authors
+Original author : Jaakko Repo
+Developer : Lukas Ekberg
 
-See the list of [contributors](https://github.com/lukkan99/jColour-reloaded/contributors) who participated in this project.
+See the full list of [contributors](https://github.com/lukkan99/jColour-reloaded/contributors) who participated in this project.
 
 ## License
 
