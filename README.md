@@ -44,6 +44,7 @@ Please submit a pull request or an issue.
 
 ## Authors
 Original author : Jaakko Repo
+
 Developer : Lukas Ekberg
 
 See the full list of [contributors](https://github.com/lukkan99/jColour-reloaded/contributors) who participated in this project.
