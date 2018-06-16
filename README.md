@@ -1,6 +1,6 @@
 
 
-# jColour jColour-reloaded
+# jColour-reloaded
 
 Website + discord.js interface for the jColour-reloaded bot
 
