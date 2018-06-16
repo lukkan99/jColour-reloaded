@@ -1,14 +1,14 @@
-# CODE MOVED TO GITLAB - CODE WON'T BE UPDATED HERE ANYMORE! https://gitlab.com/jaakkorepo/jColour
 
-# jColour
 
-Website + discord.js interface for the jColour bot
+# jColour jColour-reloaded
+
+Website + discord.js interface for the jColour-reloaded bot
 
 [![Discord Bots](https://discordbots.org/api/widget/358968052500660226.svg)](https://discordbots.org/bot/358968052500660226)
 
 ## Invite me!
 
-https://jcolour.jaqreven.com/invite
+to be added
 
 ## Installing
 
@@ -45,7 +45,7 @@ Please submit a pull request or an issue.
 
 ## Authors
 
-See the list of [contributors](https://github.com/jaqreven/jColour/contributors) who participated in this project.
+See the list of [contributors](https://github.com/lukkan99/jColour-reloaded/contributors) who participated in this project.
 
 ## License
 
