@@ -3,6 +3,7 @@
 # jColour-reloaded externed colour manager 
 
 Website + discord.js interface for the jColour-reloaded bot
+
 powerd by j-colour and karma.js
 
 Currently in early beta
