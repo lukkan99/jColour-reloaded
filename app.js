@@ -8,6 +8,12 @@ const {
 } = require('./package.json');
 const config = require('./config/config.json');
 
+const {
+	calcDays
+} = require("./utils/tools/calcdays.js");
+const statusList = require("./utils/lists/status.json");
+
+
 const DBL = require("dblapi.js");
 const dbl = new DBL(config.dblToken);
 
@@ -26,7 +32,8 @@ client.registry
 	// Registers your custom command groups
 	.registerGroups([
 		['colour', 'Colour'],
-		['info', 'Information']
+		['info', 'Information'],
+		['jlogs', 'Join Logs']
 	])
 
 	// Registers all built-in groups, some commands, and argument types
@@ -153,6 +160,106 @@ client.on('commandRun', command => {
 	// Logs the command in cyan
 	console.log('\x1b[36m%s\x1b[0m', "CMD " + command.name + " / " + command.group.name)
 });
+
+client.on('guildMemberAdd', member => {
+
+	//Let's gather some data.
+
+	const targetChannel = member.guild.channels.find("id", member.guild.settings.get("joinLogsChannel", null));
+	const autoRole = member.guild.roles.find("id", member.guild.settings.get("joinLogsAutoRole", null));
+	const autoBotRole = member.guild.roles.find("id", member.guild.settings.get("joinLogsBotRole", null));
+	const verification = member.guild.settings.get("joinLogsVerification", null);
+
+	if (targetChannel) { // If join logs is enabled (a channel is set)
+
+		// Let's get some messages for it lol
+		const titles = [
+      `${member.user.username} popped up!`,
+      `${member.user.username} joined in the fun!`,
+      `${member.user.username} joined.`,
+      `${member.user.username} clicked the invite!`
+    ];
+
+		// Chooses a random title
+		title = titles[Math.floor(Math.random() * titles.length)];
+
+		let embed = new Discord.RichEmbed()
+
+			// Sets base info for the embed
+			.setTitle(title)
+			.setThumbnail(member.user.avatarURL)
+			.setColor("GREEN")
+			.setFooter(new Date())
+
+			// Adds fields with info related to the member
+			.addField("User", `${member.user.tag} (${member.user})`)
+			.addField("ID", member.user.id)
+			.addField("Account Made", `${calcDays(new Date(), member.user.createdAt)} days ago`)
+			.addField("Member Count", member.guild.memberCount)
+
+
+
+		if (member.user.bot && autoBotRole) { // If member is a bot AND auto bot role exists
+			targetChannel.send({
+				embed
+			});
+			member.addRole(autoBotRole, "Join Logs (Auto Bot Role)");
+
+		} else if (!member.user.bot && !verification) { // If member is not a bot and there's no verification
+			targetChannel.send({
+				embed
+			});
+			if (autoRole) { // If there's an auto role
+				member.addRole(autoRole, "Join Logs (Auto Role)");
+			};
+
+		} else if (!member.user.bot && verification && autoRole) { // If member is not a bot and there's verification and an autorole
+			const welcomeMessage = `${member}, welcome to the server! You're currently unverified. Please wait for a moderator to check you. We'll ping you once we're done.`
+			targetChannel.send(welcomeMessage, {
+					embed
+				})
+				.then(function (message) {
+					message.react("✅")
+					message.react("❌")
+				})
+				.catch(
+					console.error
+				);
+
+		}
+
+	}
+});
+
+client.on('guildMemberRemove', member => {
+
+	const targetChannel = member.guild.channels.find("id", member.guild.settings.get("joinLogsChannel"));
+
+	if (targetChannel) {
+
+		const titles = [`${member.user.username} left the building.`, `Bye ${member.user.username}!`,
+    `See you later, ${member.user.username}.`, `${member.user.username} has disappeared.`];
+		title = titles[Math.floor(Math.random() * titles.length)];
+
+		let embed = new Discord.RichEmbed()
+
+			.setTitle(title)
+			.setThumbnail(member.user.avatarURL)
+			.setColor("RED")
+			.setFooter(new Date())
+
+			.addField("User", `${member.user.tag} (${member.user})`)
+			.addField("ID", member.user.id)
+			.addField("Account Made", `${calcDays(new Date(), member.user.createdAt)} days ago`)
+			.addField(`Joined ${member.guild.name}`, `${calcDays(new Date(), member.joinedAt)} days ago`)
+			.addField("Member Count", member.guild.memberCount)
+
+		targetChannel.send({
+			embed
+		});
+	}
+});
+
 
 
 client.login(config.token); // Logins to the api
