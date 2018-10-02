@@ -1,13 +1,14 @@
 
 
-# jColour-reloaded
+# jColour-reloaded externed colour manager powerd by j-colour and karma.js
 
 Website + discord.js interface for the jColour-reloaded bot
 
+Currently in early beta
 
 ## Invite me!
 
-to be added
+ https://discordapp.com/oauth2/authorize?client_id=496334791017365515&scope=bot&permissions=268454912
 
 ## Installing
 
