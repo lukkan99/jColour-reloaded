@@ -4,7 +4,7 @@
 
 Website + discord.js interface for the jColour-reloaded bot
 
-powerd by j-colour and karma.js
+powerd by jcolour and karma.js
 
 Currently in early beta
 
