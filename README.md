@@ -1,6 +1,7 @@
 
 
-# jColour-reloaded externed colour manager powerd by j-colour and karma.js
+# jColour-reloaded externed colour manager 
+# powerd by j-colour and karma.js
 
 Website + discord.js interface for the jColour-reloaded bot
 
