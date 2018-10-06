@@ -90,7 +90,7 @@ module.exports = class HelpCommand extends Command {
                             `).join('\n\n')
                     }
 
-					View the documentation: https://jcolour.jaqreven.com/docs
+					View the documentation(currently outdated): http://honkmaster.ninja:8085/docs/
 					`, { split: true }));
 				// if(msg.channel.type !== 'dm') messages.push(await msg.say('Sent you a DM with information.'));
 			} catch(err) {
