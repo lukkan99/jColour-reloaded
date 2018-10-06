@@ -14,6 +14,7 @@ module.exports = class PrefixCommand extends Command {
             memberName: 'prefix',
             description: 'Shows or sets the command prefix.',
             format: '[prefix/"default"/"none"]',
+            guildOnly: true,
             details: oneLine `
 				If no prefix is provided, the current prefix will be shown.
 				If the prefix is "default", the prefix will be reset to the bot's default prefix.
