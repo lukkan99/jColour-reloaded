@@ -33,7 +33,8 @@ client.registry
 	.registerGroups([
 		['colour', 'Colour'],
 		['info', 'Information'],
-		['jlogs', 'Join Logs']
+		['jlogs', 'Join Logs'],
+		['rp_sfw', 'SFW Roleplay']
 	])
 
 	// Registers all built-in groups, some commands, and argument types
@@ -51,7 +52,7 @@ client.registry
 	.registerCommandsIn(path.join(__dirname, 'commands'));
 
 
-	
+
 client.on('ready', () => {
 	console.log(`\nLogged in:
 Bot: ${client.user.tag} / ${client.user.id} / v${version} (Codename ${description})
