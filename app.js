@@ -33,8 +33,8 @@ client.registry
 	.registerGroups([
 		['colour', 'Colour'],
 		['info', 'Information'],
-		['jlogs', 'Join Logs'],
-		['rp_sfw', 'SFW Roleplay']
+		['jlogs', 'Join Logs']
+		//['rp_sfw', 'SFW Roleplay']
 	])
 
 	// Registers all built-in groups, some commands, and argument types
