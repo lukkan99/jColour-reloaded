@@ -178,7 +178,9 @@ client.on('guildMemberAdd', member => {
       `${member.user.username} popped up!`,
       `${member.user.username} joined in the fun!`,
       `${member.user.username} joined.`,
-      `${member.user.username} clicked the invite!`
+      `${member.user.username} clicked the invite!`,
+      `${member.user.username} has sneekd in the server`
+      
     ];
 
 		// Chooses a random title
