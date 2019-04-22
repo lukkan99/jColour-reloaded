@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'jColour'
-copyright = '2018, Jaakko Repo'
-author = 'Jaakko Repo'
+copyright = '2019, Jaakko Repo, Lukas ekberg'
+author = 'Jaakko Repo and Lukas ekberg'
 
 # The short X.Y version
 version = ''
