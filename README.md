@@ -1,4 +1,5 @@
-
+# bot are retired
+and code nolonger maintained use code at own risk
 
 # jColour-reloaded externed colour manager 
 
@@ -10,7 +11,7 @@ Currently in early beta
 
 ## Invite me!
 
- https://discordapp.com/oauth2/authorize?client_id=496334791017365515&scope=bot&permissions=268454912
+ bot dead
 
 ## Installing
 
